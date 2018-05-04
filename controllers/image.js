@@ -1,5 +1,5 @@
 const Clarifai = require('clarifai');
-const apiKeySECRET = require('./secret.js')
+const apiKeySECRET = require('../secret.js')
 
 
 //You must add your own API key here from Clarifai.
