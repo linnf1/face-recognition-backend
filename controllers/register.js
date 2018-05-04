@@ -1,8 +1,8 @@
 const handleRegister = (req, res, db, bcrypt) => {
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
-    return res.status(400).json('incorrect form submission');
-  }
+    return res.status(400).json('incorrect form submission'); //if you didnt add return you would get 'cant set headers after execution'
+  }                                                 //this is beacause w/o return you are not breaking so it goes to the next line.
   const hash = bcrypt.hashSync(password);
     db.transaction(trx => {
       trx.insert({
